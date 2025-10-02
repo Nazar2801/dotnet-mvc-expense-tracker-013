@@ -1,0 +1,52 @@
+﻿@model dotnet_mvc_expense_tracker.Models.Budget
+
+<h2>Edit Budget</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label>Kategori</label>
+        <select asp-for="Kategori" class="form-control" asp-items="@(new SelectList(ViewBag.KategoriList))"></select>
+    </div>
+
+    <div class="form-group">
+        <label>Nama</label>
+        <input asp-for="Nama" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Deskripsi</label>
+        <textarea asp-for="Deskripsi" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Total Budget</label>
+        <input asp-for="TotalBudget" class="form-control" type="number" />
+    </div>
+
+    <div class="form-group">
+        <label>Start Date</label>
+        <input asp-for="StartDate" class="form-control" type="date" />
+    </div>
+
+    <div class="form-group">
+        <label>End Date</label>
+        <input asp-for="EndDate" class="form-control" type="date" />
+    </div>
+
+    <div class="form-group form-check">
+        <input asp-for="IsRepeat" class="form-check-input" type="checkbox" />
+        <label class="form-check-label">Is Repeat?</label>
+    </div>
+
+    <div class="form-group">
+        <label>Status</label>
+        <select asp-for="Status" class="form-control">
+            <option value="active">Active</option>
+            <option value="not active">Not Active</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

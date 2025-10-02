@@ -1,0 +1,15 @@
+﻿@model dotnet_mvc_expense_tracker.Models.Budget
+
+<h2>Detail Budget</h2>
+
+<ul class="list-group">
+    <li class="list-group-item"><b>Kategori:</b> @Model.Kategori</li>
+    <li class="list-group-item"><b>Nama:</b> @Model.Nama</li>
+    <li class="list-group-item"><b>Deskripsi:</b> @Model.Deskripsi</li>
+    <li class="list-group-item"><b>Total:</b> @Model.TotalBudget</li>
+    <li class="list-group-item"><b>Start:</b> @Model.StartDate.ToShortDateString()</li>
+    <li class="list-group-item"><b>End:</b> @Model.EndDate.ToShortDateString()</li>
+    <li class="list-group-item"><b>Repeat:</b> @(Model.IsRepeat ? "Yes" : "No")</li>
+    <li class="list-group-item"><b>Status:</b> @Model.Status</li>
+</ul>
+<a asp-action="Index" class="btn btn-secondary mt-3">Kembali</a>

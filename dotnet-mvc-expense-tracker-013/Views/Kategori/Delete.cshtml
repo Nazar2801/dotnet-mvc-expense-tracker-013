@@ -1,0 +1,17 @@
+﻿@model dotnet_mvc_expense_tracker.Models.Kategori
+
+<h2>Hapus Kategori</h2>
+
+<p>Apakah Anda yakin ingin menghapus data ini?</p>
+
+<ul>
+    <li>@Model.Tipe - @Model.Nama</li>
+    <li>@Model.Deskripsi</li>
+    <li>Status: @Model.Status</li>
+</ul>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Hapus</button>
+    <a asp-action="Index" class="btn btn-secondary">Batal</a>
+</form>

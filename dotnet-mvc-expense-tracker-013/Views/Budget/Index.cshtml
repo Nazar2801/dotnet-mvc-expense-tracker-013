@@ -1,0 +1,34 @@
+﻿@model IEnumerable<dotnet_mvc_expense_tracker.Models.Budget>
+
+<h2>Master Data Budget</h2>
+<a asp-action="Create" class="btn btn-primary">Tambah Budget</a>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Kategori</th>
+            <th>Nama</th>
+            <th>Total</th>
+            <th>Periode</th>
+            <th>Status</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Kategori</td>
+                <td>@item.Nama</td>
+                <td>@item.TotalBudget</td>
+                <td>@item.StartDate.ToShortDateString() - @item.EndDate.ToShortDateString()</td>
+                <td>@item.Status</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Lihat</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Hapus</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
